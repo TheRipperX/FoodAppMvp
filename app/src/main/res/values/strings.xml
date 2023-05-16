@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">mvm FoodApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search">Search ...</string>
+    <string name="food_list">Food List</string>
+    <string name="category_items">Category Items</string>
+    <string name="title_food_name">Title Food Name</string>
+    <string name="fastfood">FastFood</string>
+    <string name="iran">Iran</string>
+    <string name="food_name">Food Name</string>
+    <string name="food_desc">Preheat oven to 350° F. Spray a 9x13-inch baking pan with non-stick spray.</string>
+    <string name="ingredient">Ingredient</string>
+    <string name="Measure">Measure</string>
+    <string name="brown_sugar">brown sugar</string>
+    <string name="_2_teaspoon">/2 teaspoon</string>
+</resources>
