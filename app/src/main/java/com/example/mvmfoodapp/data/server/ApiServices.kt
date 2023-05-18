@@ -1,9 +1,10 @@
 package com.example.mvmfoodapp.data.server
 
+import com.example.mvmfoodapp.data.model.detail.ResponseDetail
 import com.example.mvmfoodapp.data.model.home.ResponseCategory
 import com.example.mvmfoodapp.data.model.home.ResponseFoodList
 import com.example.mvmfoodapp.data.model.home.ResponseRandom
-import com.example.mvmfoodapp.data.model.home.ResponseSearchFood
+import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Single
 import retrofit2.Response
 import retrofit2.http.GET
@@ -25,4 +26,7 @@ interface ApiServices {
 
     @GET("filter.php")
     fun categoryFoodList(@Query("c") str: String): Single<Response<ResponseFoodList>>
+
+    @GET("lookup.php")
+    fun detailInfoFood(@Query("i") id: Int): Observable<Response<ResponseDetail>>
 }

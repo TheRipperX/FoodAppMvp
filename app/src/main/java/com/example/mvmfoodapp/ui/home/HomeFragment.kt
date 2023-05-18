@@ -2,12 +2,14 @@ package com.example.mvmfoodapp.ui.home
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import coil.load
 import com.example.mvmfoodapp.R
@@ -17,6 +19,7 @@ import com.example.mvmfoodapp.data.model.home.ResponseRandom
 import com.example.mvmfoodapp.databinding.FragmentHomeBinding
 import com.example.mvmfoodapp.ui.home.adapter.AdapterCategory
 import com.example.mvmfoodapp.ui.home.adapter.AdapterFoodList
+import com.example.mvmfoodapp.utils.BundleIdMeal
 import com.example.mvmfoodapp.utils.isCHeckInternet
 import com.example.mvmfoodapp.utils.showSnackBar
 import com.jakewharton.rxbinding4.widget.textChanges
@@ -62,7 +65,7 @@ class HomeFragment : Fragment(), HomeContracts.View {
             presenter.callFoodCategory()
 
             //call fool list
-            presenter.callFoodList("b")
+            presenter.callFoodList("A")
 
             edtSearch.textChanges()
                 .skipInitialValue()
@@ -135,6 +138,9 @@ class HomeFragment : Fragment(), HomeContracts.View {
 
     @SuppressLint("NotifyDataSetChanged")
     override fun loadFoodList(data: ResponseFoodList) {
+
+        adapterFoodList.getItemsData(data.meals)
+
         binding.apply {
             layoutCategoryAndFoodList.visibility = View.VISIBLE
             layoutEmptyInternet.visibility = View.GONE
@@ -143,12 +149,13 @@ class HomeFragment : Fragment(), HomeContracts.View {
                 adapter = adapterFoodList
             }
         }
-        adapterFoodList.notifyDataSetChanged()
-        adapterFoodList.differ.submitList(data.meals)
 
+        adapterFoodList.setClickItems {
 
-        if (!data.meals.isNullOrEmpty())
-            binding.edtSearch.text.clear()
+            // navigate id food to send detail fragments
+            val idFood = it.idMeal.toInt()
+            findNavController().navigate(HomeFragmentDirections.acHoToDe(idFood))
+        }
     }
 
     override fun hideLFood() {

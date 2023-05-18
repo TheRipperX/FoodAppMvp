@@ -1,261 +1,306 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.detail.DetailFragment" >
-<!--image view food-->
 
-    <!--    image view back btn-->
-    <ImageView
-        android:id="@+id/img_food"
-        android:layout_width="0dp"
-        android:layout_height="300dp"
-        android:src="@drawable/notfound"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription" />
-
-    <ImageView
-        android:id="@+id/img_back"
-        android:layout_width="30dp"
-        android:padding="5dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/lightYellow"
-        android:src="@drawable/baseline_arrow_back_24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription" />
-
-<!--    layout details items food-->
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layout_details_items"
-        android:layout_width="match_parent"
-        android:background="@drawable/detail_shape_"
-        app:layout_constraintTop_toBottomOf="@id/img_food"
-        android:padding="5dp"
-        app:layout_constraintBottom_toBottomOf="@id/img_food"
+        android:id="@+id/lay_details"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_height="70dp">
-
-    <TextView
-        android:id="@+id/img_mode_food"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        tools:ignore="ContentDescription"
-        app:drawableTint="@color/pink"
-        app:drawableStartCompat="@drawable/baseline_fastfood_24" />
-
-        <TextView
-            android:id="@+id/img_area_food"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginStart="10dp"
-            app:layout_constraintLeft_toRightOf="@id/img_mode_food"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            tools:ignore="ContentDescription"
-            app:drawableTint="@color/pink"
-            app:drawableStartCompat="@drawable/baseline_language_24" />
-
-        <TextView
-            android:id="@+id/img_page_food"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginEnd="10dp"
-            android:padding="5dp"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_width="30dp"
-            android:gravity="center"
-            android:layout_height="30dp"
-            tools:ignore="ContentDescription"
-            app:drawableTint="@color/pink"
-            app:drawableStartCompat="@drawable/baseline_open_in_browser_24" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-<!--    layout detail food make foods-->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layout_detail_make_food"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="2dp"
-        android:background="@drawable/detail_bg_footer_app"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout_details_items"
-        app:layout_constraintVertical_bias="1.0">
+        android:layout_height="match_parent">
 
-        <ScrollView
-            android:id="@+id/scroll_view_footer"
+
+
+        <!--image view food-->
+        <!--    image view back btn-->
+        <ImageView
+            android:id="@+id/img_food"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="40dp"
+            android:background="@drawable/bg_back_btn"
+            android:layout_height="40dp"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/baseline_arrow_back_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <!--    layout details items food-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_details_items"
             android:layout_width="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/detail_shape_"
+            app:layout_constraintTop_toBottomOf="@id/img_food"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="@id/img_food"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_height="match_parent">
+            android:layout_height="70dp">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <TextView
+                android:id="@+id/img_mode_food"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="10dp"
+                android:gravity="center"
+                android:textColorHint="@color/lightYellow"
+                android:textColor="@color/lightYellow"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                tools:ignore="ContentDescription"
+                app:drawableTint="@color/pink"
+                app:drawableStartCompat="@drawable/baseline_fastfood_24" />
+
+            <TextView
+                android:id="@+id/img_area_food"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginStart="10dp"
+                android:gravity="center"
+                android:textColor="@color/lightYellow"
+                android:textColorHint="@color/lightYellow"
+                app:layout_constraintLeft_toRightOf="@id/img_mode_food"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                tools:ignore="ContentDescription"
+                app:drawableTint="@color/pink"
+                app:drawableStartCompat="@drawable/baseline_language_24" />
+
+            <TextView
+                android:id="@+id/img_page_food"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="10dp"
+                android:padding="5dp"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="30dp"
+                android:gravity="center"
+                android:layout_height="30dp"
+                tools:ignore="ContentDescription"
+                app:drawableTint="@color/pink"
+                app:drawableStartCompat="@drawable/baseline_open_in_browser_24" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--    layout detail food make foods-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_detail_make_food"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="2dp"
+            android:background="@drawable/detail_bg_footer_app"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_details_items"
+            app:layout_constraintVertical_bias="1.0">
+
+            <ScrollView
+                android:id="@+id/scroll_view_footer"
                 android:layout_width="match_parent"
-                android:layout_height="0dp">
-
-                <TextView
-                    android:id="@+id/txt_title"
-                    android:textSize="20sp"
-                    android:gravity="center"
-                    android:padding="10dp"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:maxLines="1"
-                    android:ellipsize="marquee"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    android:hint="@string/food_name"
-                    android:textColor="@color/black"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:ignore="MissingConstraints" />
-
-                <TextView
-                    android:id="@+id/txt_desc"
-                    android:textSize="16sp"
-                    android:padding="10dp"
-                    app:layout_constraintTop_toBottomOf="@id/txt_title"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    android:textStyle="italic"
-                    android:hint="@string/food_desc"
-                    android:textColor="@color/black"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    tools:ignore="MissingConstraints" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_height="match_parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/layout_Ingredient_Measure"
-                    app:layout_constraintRight_toRightOf="parent"
-                    android:background="@drawable/detail_bg_desc_shape"
-                    app:layout_constraintTop_toBottomOf="@id/txt_desc"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    android:layout_width="wrap_content"
-                    android:paddingHorizontal="50dp"
+                    android:layout_width="match_parent"
                     android:layout_height="0dp">
 
-                    
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/layout_in_con"
-                        android:layout_width="wrap_content"
-                        android:padding="5dp"
-                        app:layout_constraintRight_toLeftOf="@id/layout_meas_con"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                    <TextView
+                        android:id="@+id/txt_title"
+                        android:textSize="20sp"
+                        android:gravity="center"
+                        android:padding="10dp"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        android:layout_height="wrap_content">
-
-                        <ImageView
-                            android:id="@+id/img_ing"
-                            app:layout_constraintTop_toTopOf="parent"
-                            android:src="@drawable/lngredient"
-                            android:padding="5dp"
-                            app:layout_constraintLeft_toLeftOf="parent"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            tools:ignore="ContentDescription,MissingConstraints" />
-
-                        <TextView
-                            android:id="@+id/txt_title_in"
-                            app:layout_constraintTop_toTopOf="@id/img_ing"
-                            android:text="@string/ingredient"
-                            android:textSize="20sp"
-                            android:textColor="@color/black"
-                            app:layout_constraintLeft_toRightOf="@id/img_ing"
-                            app:layout_constraintBottom_toBottomOf="@id/img_ing"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-
-                        <TextView
-                            android:id="@+id/txt_in_desc"
-                            android:hint="@string/brown_sugar"
-                            android:textColor="@color/black"
-                            android:textSize="16sp"
-                            android:gravity="center"
-                            app:layout_constraintRight_toRightOf="@id/txt_title_in"
-                            app:layout_constraintTop_toBottomOf="@id/img_ing"
-                            app:layout_constraintLeft_toLeftOf="@id/img_ing"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/layout_meas_con"
-                        android:layout_width="wrap_content"
-                        android:padding="5dp"
-                        app:layout_constraintLeft_toRightOf="@id/layout_in_con"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
+                        android:maxLines="1"
+                        android:ellipsize="marquee"
                         app:layout_constraintRight_toRightOf="parent"
-                        android:layout_height="wrap_content">
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textColor="@color/mediumRed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:ignore="MissingConstraints" />
 
-                        <ImageView
-                            android:id="@+id/img_meas"
-                            app:layout_constraintTop_toTopOf="parent"
-                            android:src="@drawable/Measure"
+                    <TextView
+                        android:id="@+id/txt_desc"
+                        android:textSize="16sp"
+                        android:padding="10dp"
+                        app:layout_constraintTop_toBottomOf="@id/txt_title"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:textStyle="italic"
+                        android:lineBreakWordStyle="phrase"
+                        android:textColor="@color/black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:ignore="MissingConstraints,MissingPrefix,UnusedAttribute" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layout_Ingredient_Measure"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:background="@drawable/detail_bg_desc_shape"
+                        app:layout_constraintTop_toBottomOf="@id/txt_desc"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        android:layout_width="wrap_content"
+                        android:paddingHorizontal="50dp"
+                        android:layout_height="0dp">
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layout_in_con"
+                            android:layout_width="wrap_content"
                             android:padding="5dp"
+                            app:layout_constraintRight_toLeftOf="@id/layout_meas_con"
+                            app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintLeft_toLeftOf="parent"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            tools:ignore="ContentDescription,MissingConstraints" />
+                            android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/txt_title_meas"
-                            app:layout_constraintTop_toTopOf="@id/img_meas"
-                            android:text="@string/Measure"
-                            android:textSize="20sp"
-                            android:textColor="@color/black"
-                            app:layout_constraintLeft_toRightOf="@id/img_meas"
-                            app:layout_constraintBottom_toBottomOf="@id/img_meas"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            <ImageView
+                                android:id="@+id/img_ing"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:src="@drawable/lngredient"
+                                android:padding="5dp"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                tools:ignore="ContentDescription,MissingConstraints" />
 
-                        <TextView
-                            android:id="@+id/txt_meas_desc"
+                            <TextView
+                                android:id="@+id/txt_title_in"
+                                app:layout_constraintTop_toTopOf="@id/img_ing"
+                                android:text="@string/ingredient"
+                                android:textSize="20sp"
+                                android:textColor="@color/black"
+                                app:layout_constraintLeft_toRightOf="@id/img_ing"
+                                app:layout_constraintBottom_toBottomOf="@id/img_ing"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:id="@+id/txt_in_desc"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
+                                android:gravity="center"
+                                android:maxLines="2"
+                                app:layout_constraintRight_toRightOf="@id/txt_title_in"
+                                app:layout_constraintTop_toBottomOf="@id/img_ing"
+                                app:layout_constraintLeft_toLeftOf="@id/img_ing"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/layout_meas_con"
                             android:layout_width="wrap_content"
-                            android:textSize="16sp"
-                            android:textColor="@color/black"
-                            android:gravity="center"
-                            android:hint="@string/_2_teaspoon"
-                            app:layout_constraintTop_toBottomOf="@id/img_meas"
-                            app:layout_constraintLeft_toLeftOf="@id/img_meas"
-                            app:layout_constraintRight_toRightOf="@id/txt_title_meas"
-                            android:layout_height="wrap_content"/>
+                            android:padding="5dp"
+                            app:layout_constraintLeft_toRightOf="@id/layout_in_con"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/img_meas"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:src="@drawable/meas_images"
+                                android:padding="5dp"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                tools:ignore="ContentDescription,MissingConstraints" />
+
+                            <TextView
+                                android:id="@+id/txt_title_meas"
+                                app:layout_constraintTop_toTopOf="@id/img_meas"
+                                android:text="@string/Measure"
+                                android:textSize="20sp"
+                                android:textColor="@color/black"
+                                app:layout_constraintLeft_toRightOf="@id/img_meas"
+                                app:layout_constraintBottom_toBottomOf="@id/img_meas"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                            <TextView
+                                android:id="@+id/txt_meas_desc"
+                                android:layout_width="wrap_content"
+                                android:textSize="16sp"
+                                android:textColor="@color/black"
+                                android:maxLines="2"
+                                android:gravity="center"
+                                app:layout_constraintTop_toBottomOf="@id/img_meas"
+                                app:layout_constraintLeft_toLeftOf="@id/img_meas"
+                                app:layout_constraintRight_toRightOf="@id/txt_title_meas"
+                                android:layout_height="wrap_content"/>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
 
 
-        </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/con_layout_no_internet"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/white"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/included_internet"
+            layout="@layout/empty_or_internet_layout"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_Detail"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
