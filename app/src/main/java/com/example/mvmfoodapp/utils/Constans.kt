@@ -15,6 +15,11 @@ const val HEADERMODULE = "headerModule"
 
 const val BundleIdMeal = "bundle_id_meal"
 
+const val Food_Table = "Food_Table"
+const val Database_Name = "Database_Name"
+const val DatabaseVersion = 1
+
+
 
 fun Context.isCHeckInternet(): Boolean {
     val cm = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager

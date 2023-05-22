@@ -48,8 +48,6 @@ class DetailFragment : Fragment(), DetailContracts.View {
 
         idFood = args.foodIds
 
-
-        Log.d("TAG", "onViewCreated: $idFood")
         if (idFood > 0)
             presenter.callDetailFoodItems(idFood)
 
