@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import coil.load
@@ -73,7 +74,8 @@ class HomeFragment : Fragment(), HomeContracts.View {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
                     //call api
-                    presenter.callSearchFoodList(it.toString())
+                    if (it.length > 1)
+                        presenter.callSearchFoodList(it.toString())
 
                 }
         }
@@ -126,11 +128,13 @@ class HomeFragment : Fragment(), HomeContracts.View {
     }
 
     override fun loadFoodCategory(data: ResponseCategory) {
+        adapterCategory.differ.submitList(data.categories)
+
         binding.recCategoryList.apply {
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             adapter = adapterCategory
         }
-        adapterCategory.differ.submitList(data.categories)
+
         adapterCategory.onItemClick {
             presenter.callCategoryFoodList(it.strCategory)
         }

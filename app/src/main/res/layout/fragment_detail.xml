@@ -137,93 +137,94 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_height="match_parent">
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="0dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp">
+                    android:layout_height="wrap_content"
+                    tools:ignore="ScrollViewSize">
 
                     <TextView
                         android:id="@+id/txt_title"
-                        android:textSize="20sp"
-                        android:gravity="center"
-                        android:padding="10dp"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:maxLines="1"
-                        android:ellipsize="marquee"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        android:textColor="@color/mediumRed"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:ellipsize="marquee"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:textColor="@color/mediumRed"
+                        android:textSize="20sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
                         tools:ignore="MissingConstraints" />
 
                     <TextView
                         android:id="@+id/txt_desc"
-                        android:textSize="16sp"
-                        android:padding="10dp"
-                        app:layout_constraintTop_toBottomOf="@id/txt_title"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        android:textStyle="italic"
-                        android:lineBreakWordStyle="phrase"
-                        android:textColor="@color/black"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:justificationMode="inter_word"
+                        android:lineBreakWordStyle="phrase"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_title"
                         tools:ignore="MissingConstraints,MissingPrefix,UnusedAttribute" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/layout_Ingredient_Measure"
-                        app:layout_constraintRight_toRightOf="parent"
-                        android:background="@drawable/detail_bg_desc_shape"
-                        app:layout_constraintTop_toBottomOf="@id/txt_desc"
-                        app:layout_constraintLeft_toLeftOf="parent"
                         android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:background="@drawable/detail_bg_desc_shape"
                         android:paddingHorizontal="50dp"
-                        android:layout_height="0dp">
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_desc">
 
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:id="@+id/layout_in_con"
                             android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:padding="5dp"
-                            app:layout_constraintRight_toLeftOf="@id/layout_meas_con"
-                            app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintLeft_toLeftOf="parent"
-                            android:layout_height="wrap_content">
+                            app:layout_constraintRight_toLeftOf="@id/layout_meas_con"
+                            app:layout_constraintTop_toTopOf="parent">
 
                             <ImageView
                                 android:id="@+id/img_ing"
-                                app:layout_constraintTop_toTopOf="parent"
-                                android:src="@drawable/lngredient"
-                                android:padding="5dp"
-                                app:layout_constraintLeft_toLeftOf="parent"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
+                                android:padding="5dp"
+                                android:src="@drawable/lngredient"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
                                 tools:ignore="ContentDescription,MissingConstraints" />
 
                             <TextView
                                 android:id="@+id/txt_title_in"
-                                app:layout_constraintTop_toTopOf="@id/img_ing"
-                                android:text="@string/ingredient"
-                                android:textSize="20sp"
-                                android:textColor="@color/black"
-                                app:layout_constraintLeft_toRightOf="@id/img_ing"
-                                app:layout_constraintBottom_toBottomOf="@id/img_ing"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                android:layout_height="wrap_content"
+                                android:text="@string/ingredient"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                app:layout_constraintBottom_toBottomOf="@id/img_ing"
+                                app:layout_constraintLeft_toRightOf="@id/img_ing"
+                                app:layout_constraintTop_toTopOf="@id/img_ing" />
 
                             <TextView
                                 android:id="@+id/txt_in_desc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
                                 android:textColor="@color/black"
                                 android:textSize="16sp"
-                                android:gravity="center"
-                                android:maxLines="2"
-                                app:layout_constraintRight_toRightOf="@id/txt_title_in"
-                                app:layout_constraintTop_toBottomOf="@id/img_ing"
                                 app:layout_constraintLeft_toLeftOf="@id/img_ing"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                app:layout_constraintRight_toRightOf="@id/txt_title_in"
+                                app:layout_constraintTop_toBottomOf="@id/img_ing" />
 
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -231,48 +232,46 @@
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:id="@+id/layout_meas_con"
                             android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:padding="5dp"
                             app:layout_constraintLeft_toRightOf="@id/layout_in_con"
-                            app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintRight_toRightOf="parent"
-                            android:layout_height="wrap_content">
+                            app:layout_constraintTop_toTopOf="parent">
 
                             <ImageView
                                 android:id="@+id/img_meas"
-                                app:layout_constraintTop_toTopOf="parent"
-                                android:src="@drawable/meas_images"
-                                android:padding="5dp"
-                                app:layout_constraintLeft_toLeftOf="parent"
                                 android:layout_width="40dp"
                                 android:layout_height="40dp"
+                                android:padding="5dp"
+                                android:src="@drawable/meas_images"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
                                 tools:ignore="ContentDescription,MissingConstraints" />
 
                             <TextView
                                 android:id="@+id/txt_title_meas"
-                                app:layout_constraintTop_toTopOf="@id/img_meas"
-                                android:text="@string/Measure"
-                                android:textSize="20sp"
-                                android:textColor="@color/black"
-                                app:layout_constraintLeft_toRightOf="@id/img_meas"
-                                app:layout_constraintBottom_toBottomOf="@id/img_meas"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"/>
+                                android:layout_height="wrap_content"
+                                android:text="@string/Measure"
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                app:layout_constraintBottom_toBottomOf="@id/img_meas"
+                                app:layout_constraintLeft_toRightOf="@id/img_meas"
+                                app:layout_constraintTop_toTopOf="@id/img_meas" />
 
                             <TextView
                                 android:id="@+id/txt_meas_desc"
                                 android:layout_width="wrap_content"
-                                android:textSize="16sp"
-                                android:textColor="@color/black"
-                                android:maxLines="2"
+                                android:layout_height="wrap_content"
                                 android:gravity="center"
-                                app:layout_constraintTop_toBottomOf="@id/img_meas"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"
                                 app:layout_constraintLeft_toLeftOf="@id/img_meas"
                                 app:layout_constraintRight_toRightOf="@id/txt_title_meas"
-                                android:layout_height="wrap_content"/>
+                                app:layout_constraintTop_toBottomOf="@id/img_meas" />
 
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
