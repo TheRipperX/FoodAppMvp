@@ -44,6 +44,20 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="ContentDescription" />
 
+        <ImageView
+            android:id="@+id/img_favorite"
+            android:layout_width="40dp"
+            android:background="@drawable/bg_back_btn"
+            android:layout_height="40dp"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/baseline_favorite_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
         <!--    layout details items food-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_details_items"

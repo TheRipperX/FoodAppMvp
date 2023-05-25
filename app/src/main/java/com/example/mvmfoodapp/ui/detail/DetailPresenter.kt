@@ -1,6 +1,7 @@
 package com.example.mvmfoodapp.ui.detail
 
 import com.example.mvmfoodapp.base.BasePresenterImpl
+import com.example.mvmfoodapp.data.db.FoodEntity
 import com.example.mvmfoodapp.data.repository.detail.DetailRepository
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
@@ -46,5 +47,32 @@ class DetailPresenter @Inject constructor(
             view.hideLoading()
             view.errorInternet(false)
         }
+    }
+
+    override fun callInsertFood(foodEntity: FoodEntity) {
+        disposable = detailRepository.insertFood(foodEntity)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe{
+                view.loadFoodOperations(true)
+            }
+    }
+
+    override fun callDeleteFood(foodEntity: FoodEntity) {
+        disposable = detailRepository.deleteFood(foodEntity)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe{
+                view.loadFoodOperations(false)
+            }
+    }
+
+    override fun callIsFoods(id: Int) {
+        disposable = detailRepository.foodIdFind(id)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe{
+                view.loadFoodOperations(it)
+            }
     }
 }

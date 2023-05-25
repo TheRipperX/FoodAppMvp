@@ -2,6 +2,7 @@ package com.example.mvmfoodapp.utils.di
 
 import androidx.fragment.app.Fragment
 import com.example.mvmfoodapp.ui.detail.DetailContracts
+import com.example.mvmfoodapp.ui.favorite.FavoriteContracts
 import com.example.mvmfoodapp.ui.home.HomeContracts
 import dagger.Module
 import dagger.Provides
@@ -20,5 +21,10 @@ object ContractsModule {
     @Provides
     fun proFragmentsDetail(fragment: Fragment): DetailContracts.View {
         return fragment as DetailContracts.View
+    }
+
+    @Provides
+    fun proFragmentsFavorite(fragment: Fragment): FavoriteContracts.View {
+        return fragment as FavoriteContracts.View
     }
 }

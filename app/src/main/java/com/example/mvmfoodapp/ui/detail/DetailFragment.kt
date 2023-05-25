@@ -1,17 +1,21 @@
 package com.example.mvmfoodapp.ui.detail
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import coil.load
+import com.example.mvmfoodapp.R
+import com.example.mvmfoodapp.data.db.FoodEntity
 import com.example.mvmfoodapp.data.model.detail.ResponseDetail
 import com.example.mvmfoodapp.databinding.FragmentDetailBinding
 import com.example.mvmfoodapp.utils.isCHeckInternet
@@ -28,6 +32,9 @@ class DetailFragment : Fragment(), DetailContracts.View {
 
     private val args: DetailFragmentArgs by navArgs()
     private var idFood = 0
+
+    @Inject
+    lateinit var foodEntity: FoodEntity
 
     @Inject
     lateinit var presenter: DetailPresenter
@@ -63,6 +70,15 @@ class DetailFragment : Fragment(), DetailContracts.View {
 
             try {
                 data.meals[0].let { listsFood->
+
+                    //database
+                    foodEntity.id = listsFood.idMeal.toInt()
+                    foodEntity.foodName = listsFood.strMeal
+                    foodEntity.foodImage = listsFood.strMealThumb
+
+                    presenter.callIsFoods(listsFood.idMeal.toInt())
+
+                    //server
                     imgFood.load(listsFood.strMealThumb)
                     imgModeFood.text = listsFood.strCategory
                     imgAreaFood.text = listsFood.strArea
@@ -104,6 +120,25 @@ class DetailFragment : Fragment(), DetailContracts.View {
             }
 
 
+        }
+    }
+
+    @SuppressLint("ResourceType")
+    override fun loadFoodOperations(isAdded: Boolean) {
+        binding.apply {
+            imgFavorite.setOnClickListener {
+                if (isAdded) {
+                    presenter.callDeleteFood(foodEntity)
+                }else{
+                    presenter.callInsertFood(foodEntity)
+                }
+            }
+            //check add or no
+            if (isAdded){
+                imgFavorite.setColorFilter(ContextCompat.getColor(requireContext(), R.color.purple_500))
+            }else {
+                imgFavorite.setColorFilter(ContextCompat.getColor(requireContext(), R.color.black))
+            }
         }
     }
 
